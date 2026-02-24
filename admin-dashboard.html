@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="dashboard">
+
+    <div class="top-bar">
+      <h2>Admin Dashboard</h2>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>Total Tasks</h3>
+        <p id="totalTasks">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Completed</h3>
+        <p id="completedTasks">0</p>
+      </div>
+
+      <div class="stat-card">
+        <h3>Pending</h3>
+        <p id="pendingTasks">0</p>
+      </div>
+    </div>
+
+    <div class="form-section">
+      <h3>Create Task</h3>
+      <form id="taskForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <input type="text" id="description" placeholder="Description" required>
+
+        <select id="priority">
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+
+        <select id="assignedTo">
+          <option value="">Select Employee</option>
+        </select>
+
+        <input type="date" id="deadline" required>
+
+        <button type="submit">Create Task</button>
+      </form>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Priority</th>
+          <th>Status</th>
+          <th>Deadline</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="taskTable"></tbody>
+    </table>
+
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
