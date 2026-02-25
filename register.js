@@ -5,7 +5,7 @@ document.getElementById("registerForm").addEventListener("submit", async functio
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("/api/auth/register", {
+  const res = await fetch("https://task-management-system-gx89.onrender.com/api/auth/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

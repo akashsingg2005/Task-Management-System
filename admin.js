@@ -6,7 +6,7 @@ if (!token) {
 
 // LOAD EMPLOYEES IN DROPDOWN
 async function loadEmployees() {
-  const res = await fetch("/api/auth/users", {
+  const res = await fetch("https://task-management-system-gx89.onrender.com/api/auth/users", {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -28,7 +28,7 @@ async function loadEmployees() {
 
 // LOAD TASKS
 async function loadTasks() {
-  const res = await fetch("/api/tasks", {
+  const res = await fetch("https://task-management-system-gx89.onrender.com/api/tasks", {
     headers: {
       Authorization: "Bearer " + token
     }
@@ -80,7 +80,7 @@ document.getElementById("taskForm").addEventListener("submit", async function(e)
   const deadline = document.getElementById("deadline").value;
   const assignedTo = document.getElementById("assignedTo").value;
 
-  const res = await fetch("/api/tasks", {
+  const res = await fetch("https://task-management-system-gx89.onrender.com/api/tasks", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -107,7 +107,7 @@ document.getElementById("taskForm").addEventListener("submit", async function(e)
 async function deleteTask(id) {
   if (!confirm("Are you sure?")) return;
 
-  const res = await fetch(`/api/tasks/${id}`, {
+  const res = await fetch(`https://task-management-system-gx89.onrender.com/api/tasks/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: "Bearer " + token
@@ -121,7 +121,7 @@ async function deleteTask(id) {
 
 // UPDATE STATUS
 async function updateStatus(id, newStatus) {
-  await fetch(`/api/tasks/${id}`, {
+  await fetch(`https://task-management-system-gx89.onrender.com/api/tasks/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

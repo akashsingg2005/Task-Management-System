@@ -10,7 +10,7 @@ if (!token) {
 
 async function loadMyTasks() {
   try {
-    const res = await fetch("/api/tasks", {
+    const res = await fetch("https://task-management-system-gx89.onrender.com/api/tasks", {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -57,8 +57,8 @@ async function updateStatus(id, newStatus) {
   try {
     console.log("Updating:", id, newStatus);
 
-    const res = await fetch(`/api/tasks/${id}/status`, {
-      method: "PATCH", 
+    const res = await fetch(`https://task-management-system-gx89.onrender.com/api/tasks/${id}/status`, {
+      method: "PATCH", // 🔥 IMPORTANT
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + token

@@ -4,7 +4,7 @@ document.getElementById("loginForm").addEventListener("submit", async function(e
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
 
-  const res = await fetch("/api/auth/login", {
+  const res = await fetch("https://task-management-system-gx89.onrender.com/api/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
