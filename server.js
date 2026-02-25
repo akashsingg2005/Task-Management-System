@@ -14,13 +14,13 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(__dirname)); // 👈 ADD THIS
+app.use(express.static(__dirname)); 
 
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'login.html')); // 👈 change this
+  res.sendFile(path.join(__dirname, 'login.html'));
 });
 
 const PORT = process.env.PORT || 5000;

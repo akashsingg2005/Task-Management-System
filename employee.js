@@ -10,7 +10,7 @@ if (!token) {
 
 async function loadMyTasks() {
   try {
-    const res = await fetch("http://localhost:5000/api/tasks", {
+    const res = await fetch("/api/tasks", {
       headers: {
         Authorization: "Bearer " + token
       }
@@ -57,8 +57,8 @@ async function updateStatus(id, newStatus) {
   try {
     console.log("Updating:", id, newStatus);
 
-    const res = await fetch(`http://localhost:5000/api/tasks/${id}/status`, {
-      method: "PATCH", // 🔥 IMPORTANT
+    const res = await fetch(`/api/tasks/${id}/status`, {
+      method: "PATCH", 
       headers: {
         "Content-Type": "application/json",
         Authorization: "Bearer " + token
